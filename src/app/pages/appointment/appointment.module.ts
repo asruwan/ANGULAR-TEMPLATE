@@ -6,10 +6,9 @@ import { AppointmentComponent } from './appointment/appointment.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
 
-import {AppsRoutingModule} from '../apps/apps-routing.module';
 import {UIModule} from '../../shared/ui/ui.module';
 
-import {HttpClientModule} from '@angular/common/http';
+import { AppointmentRoutingModule } from './appointment-routing.module';
 
 
 @NgModule({
@@ -19,9 +18,8 @@ import {HttpClientModule} from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     NgbModalModule,
-    AppsRoutingModule,
+    AppointmentRoutingModule,
     UIModule,
-    HttpClientModule
   ]
 })
 export class AppointmentModule { }
