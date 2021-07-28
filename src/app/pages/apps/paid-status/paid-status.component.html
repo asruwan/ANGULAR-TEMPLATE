@@ -1,9 +1,9 @@
-<form action="">
-    <div>
+<form action=""  [formGroup]="paidStatusGroup" (ngSubmit)="submit()">
+
         <div class="col-xl-6 col-sm-6">
             <div class="form-group mt-3 mt-sm-0">
                 <label>Paid status</label>
-                <input type="text" class='form-control'>
+                <input type="text" formControlName="paidStatus"  class='form-control' value={{status}}>
             </div>
         </div>
         <div class="col-xl-6 col-sm-6">
@@ -11,6 +11,7 @@
                 <button>Save</button>
             </div>
         </div>
+</form>
     <div class="col-lg-6">
         <div class="card">
             <div class="card-body">
@@ -28,20 +29,11 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Paid status1</td>
-                            <td><button>Delete</button><button>Edit</button></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Paid status2</td>
-                            <td><button>Delete</button><button>Edit</button></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Paid status3</td>
-                            <td><button>Delete</button><button>Edit</button></td>
+                        <tr mdbTableCol *ngFor="let el of paidStatusList">
+                            <th scope="row">{{el.id}}</th>
+                            <td>{{el.paidStatus}}</td>
+                            <td><button (click)="deletePaidStatus(el.id)">Delete</button>
+                                <button (click)="editPaidStatus(el.id, el.paidStatus)">Edit</button></td>
                         </tr>
                         </tbody>
                     </table>
@@ -53,4 +45,3 @@
 
 
 
-</div>

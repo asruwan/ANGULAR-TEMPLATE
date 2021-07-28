@@ -20,8 +20,12 @@ export const MENU: MenuItem[] = [
     },
     {
         label: 'Master data',
-        icon: 'master-data',
+        icon: '',
         subItems: [
+            {
+                label: 'Service provider',
+                link: '/apps/service-provider',
+            },
             {
                 label: 'Sub types',
                 link: '/apps/sub-types',
@@ -50,6 +54,24 @@ export const MENU: MenuItem[] = [
                 label: 'Payment method',
                 link: '/apps/payment-method'
             }
+        ]
+    },
+    {
+        label: 'Appointment',
+        icon: '',
+        subItems: [
+            {
+                label: 'View appointments',
+                link: '/appointment/appointment',
+            },
+            {
+                label: 'Appointments',
+                link: '/apps/appointments'
+            }
+            // {
+            //     label: 'Compose',
+            //     link: '/apps/email-compose'
+            // },
         ]
     }
     // {

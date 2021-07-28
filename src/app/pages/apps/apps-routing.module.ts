@@ -9,6 +9,9 @@ import {JobStatusComponent} from './job-status/job-status.component';
 import {JobTypesComponent} from './job-types/job-types.component';
 import {PaidStatusComponent} from './paid-status/paid-status.component';
 import {PaymentMethodComponent} from './payment-method/payment-method.component';
+import {UserComponent} from './user/user.component';
+import {ServiceProviderComponent} from './service-provider/service-provider.component';
+import {AppointmentsComponent} from '../apps/appointments/appointments.component';
 
 const routes: Routes = [
     {
@@ -35,6 +38,12 @@ const routes: Routes = [
     },{
         path:'payment-method',
         component:PaymentMethodComponent
+    },{
+        path:'service-provider',
+        component:ServiceProviderComponent
+    },{
+        path:'appointments',
+        component:AppointmentsComponent
     }
 
 ];

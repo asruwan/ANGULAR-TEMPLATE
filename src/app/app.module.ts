@@ -9,6 +9,7 @@ import { LayoutsModule } from './layouts/layouts.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpRequestInterceptor } from './core/services/interceptor/http.interceptor';
+import {AppsModule} from './pages/apps/apps.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HttpRequestInterceptor } from './core/services/interceptor/http.interce
     BrowserAnimationsModule,
     HttpClientModule,
     LayoutsModule,
+      AppsModule,
     AppRoutingModule,
   ],
   providers: [

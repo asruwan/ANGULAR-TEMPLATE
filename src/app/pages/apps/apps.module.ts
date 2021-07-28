@@ -21,9 +21,12 @@ import { JobTypesComponent } from './job-types/job-types.component';
 import { PaidStatusComponent } from './paid-status/paid-status.component';
 import { PaymentMethodComponent } from './payment-method/payment-method.component';
 import {HttpClientModule} from '@angular/common/http';
+import { UserComponent } from './user/user.component';
+import { ServiceProviderComponent } from './service-provider/service-provider.component';
+import { AppointmentsComponent } from './appointments/appointments.component';
 
 @NgModule({
-    declarations: [CalendarComponent, SubTypesComponent, AppointmentStatusComponent, JobQueueStatusComponent, JobStatusComponent, JobTypesComponent, PaidStatusComponent, PaymentMethodComponent],
+    declarations: [CalendarComponent, SubTypesComponent, AppointmentStatusComponent, JobQueueStatusComponent, JobStatusComponent, JobTypesComponent, PaidStatusComponent, PaymentMethodComponent, UserComponent, ServiceProviderComponent, AppointmentsComponent],
     imports: [
         CommonModule,
         FormsModule,

@@ -1,81 +1,47 @@
-<form action="">
-    <div>
-        <div class="col-xl-6 col-sm-6">
-            <div class="form-group mt-3 mt-sm-0">
-                <label>Job type</label>
-                <select class='form-control'>
-                    <option value='1'>Job type1</option>
-                    <option value='2'>Job type2</option>
-                    <option value='3'>Job type3</option>
-                </select>
-            </div>
+<form action=""  [formGroup]="subTypeGroup" (ngSubmit)="submit()">
+
+    <div class="col-xl-6 col-sm-6">
+        <div class="form-group mt-3 mt-sm-0">
+            <label>Sub Type</label>
+            <input type="text" formControlName="subTypeName"  class='form-control' value={{status}}>
         </div>
-        <div class="col-xl-6 col-sm-6">
-            <div class="form-group mt-3 mt-sm-0">
-                <label>Sub job type</label>
-                <input type="text" class='form-control'>
-            </div>
-        </div>
-        <div class="col-xl-6 col-sm-6">
-            <div class="form-group mt-3 mt-sm-0">
-                <button type="submit">Save</button>
-            </div>
-        </div>
-        <!--        <button type="submit" (click)="loadSubTypes()" class="btn btn-success save-event ml-1">Load data</button>-->
-
-
-        <input type="hidden"
-               name="${_csrf.parameterName}"
-               value="${_csrf.token}"/>
-
-
-        <div class="col-lg-6">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="header-title mt-0 mb-1">Sub types</h4>
-                    <p class="sub-header">
-                    </p>
-
-                    <div class="table-responsive">
-                        <table class="table mb-0">
-                            <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Sub type</th>
-                                <th scope="col">Action</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Sub job 1</td>
-                                <td>
-                                    <button>Delete</button>
-                                    <button>Edit</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Sub job 2</td>
-                                <td>
-                                    <button>Delete</button>
-                                    <button>Edit</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Sub job </td>
-                                <td>
-                                    <button>Delete</button>
-                                    <button>Edit</button>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
+    </div>
+    <div class="col-xl-6 col-sm-6">
+        <div class="form-group mt-3 mt-sm-0">
+            <button>Save</button>
         </div>
     </div>
 </form>
+<div class="col-lg-6">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="header-title mt-0 mb-1">Sub Types</h4>
+            <p class="sub-header">
+            </p>
+
+            <div class="table-responsive">
+                <table class="table mb-0">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Sub Type</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr mdbTableCol *ngFor="let el of subTypeList">
+                        <th scope="row">{{el.id}}</th>
+                        <td>{{el.name}}</td>
+                        <td><button (click)="deleteSubJobType(el.id)">Delete</button>
+                            <button (click)="editSubJobType(el.id, el.name)">Edit</button></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+

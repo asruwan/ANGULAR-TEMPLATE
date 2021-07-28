@@ -14,6 +14,7 @@ import { WidgetModule } from '../shared/widgets/widget.module';
 import { UiModule } from './ui/ui.module';
 import { AppsModule } from './apps/apps.module';
 import { OtherModule } from './other/other.module';
+import {AppointmentModule} from './appointment/appointment.module';
 
 @NgModule({
   declarations: [DashboardComponent],
@@ -28,7 +29,8 @@ import { OtherModule } from './other/other.module';
     PagesRoutingModule,
     UiModule,
     AppsModule,
-    OtherModule
+    OtherModule,
+    AppointmentModule
   ]
 })
 export class PagesModule { }

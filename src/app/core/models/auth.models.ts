@@ -4,6 +4,6 @@ export class User {
     password: string;
     firstName: string;
     lastName: string;
-    token?: string;
+    jwt?: string;
     email: string;
 }

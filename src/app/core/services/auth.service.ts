@@ -35,16 +35,16 @@ export class AuthenticationService {
     //
     // }
     login(username: string, password: string) {
-        alert(username + password);
+       // alert(username + password);
         return this.http.post<any>(`http://localhost:8080/authenticate`, { username, password })
-            .pipe(map(user => {
+            .pipe(map(token => {
                 // login successful if there's a jwt token in the response
-                if (user && user.token) {
-                    this.user = user;
+                if (token && !!token.jwt) {
+//                    this.user = user;
                     // store user details and jwt in cookie
-                    this.cookieService.setCookie('currentUser', JSON.stringify(user), 1);
+                    this.cookieService.setCookie('currentUser', JSON.stringify(token), null);
                 }
-                return user;
+                return token;
             }));
     }
 

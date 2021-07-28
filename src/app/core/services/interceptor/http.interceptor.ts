@@ -22,10 +22,10 @@ export class HttpRequestInterceptor implements HttpInterceptor {
     //set token
     const currentUser = this.authenticationService.currentUser();
     console.log("here");
-    if (currentUser && !!currentUser.token) {
+    if (currentUser && !!currentUser.jwt) {
       request = request.clone({
         setHeaders: {
-          Authorization: `Bearer ${currentUser.token}`,
+          Authorization: `Bearer ${currentUser.jwt}`,
         }
       });
     }

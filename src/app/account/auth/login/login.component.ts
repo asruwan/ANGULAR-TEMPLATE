@@ -48,7 +48,6 @@ export class LoginComponent implements OnInit, AfterViewInit {
    * On submit form
    */
   onSubmit() {
-    alert("1111111");
     this.submitted = true;
 
     // stop here if form is invalid
@@ -61,7 +60,6 @@ export class LoginComponent implements OnInit, AfterViewInit {
       .pipe(first())
       .subscribe(
         data => {
-          alert("22222" + this.returnUrl);
           this.router.navigate([this.returnUrl]);
           this.loading = false;
         },

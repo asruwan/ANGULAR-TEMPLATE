@@ -1,0 +1,77 @@
+<form action="" [formGroup]="userGroup" (ngSubmit)="submit()">
+
+    <div class="col-xl-6 col-sm-6">
+        <div class="form-group mt-3 mt-sm-0">
+            <label>Username</label>
+            <input type="text" formControlName="username" class='form-control' value={{status}}>
+            <label>Password</label>
+            <input type="text" formControlName="password" class='form-control' value={{status}}>
+            <label>Active</label>
+            <select formControlName=active class='form-control'>
+                <option value=true>Active</option>
+                <option value=false>Deactivate</option>
+            </select>
+<!--            <input type="text" formControlName="active" class='form-control' >-->
+            <label>dateOfBirth</label>
+            <input type="text" formControlName="dateOfBirth" class='form-control' >
+            <label>gender</label>
+            <select formControlName=gender class='form-control'>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+<!--            <input type="text" formControlName="gender" class='form-control' >-->
+            <label>name</label>
+            <input type="text" formControlName="name" class='form-control' >
+            <label>PhoneNumber</label>
+            <input type="text" formControlName="phoneNumber" class='form-control' >
+            <label>placeOfBirth</label>
+            <input type="text" formControlName="placeOfBirth" class='form-control' >
+            <label>role</label>
+            <input type="text" formControlName="role" class='form-control' >
+
+        </div>
+    </div>
+
+    <div class="col-xl-6 col-sm-6">
+        <div class="form-group mt-3 mt-sm-0">
+            <button>Save</button>
+        </div>
+    </div>
+</form>
+<div class="col-lg-6">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="header-title mt-0 mb-1">User</h4>
+            <p class="sub-header">
+            </p>
+
+            <div class="table-responsive">
+                <table class="table mb-0">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">User</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr mdbTableCol *ngFor="let el of userList">
+                        <th scope="row">{{el.id}}</th>
+                        <td>{{el.name}}</td>
+                        <td>{{el.userName}}</td>
+                        <td>
+                            <button (click)="deleteUser(el.id)">Delete</button>
+                            <button (click)="editUser(el.id, el.name)">Edit</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
